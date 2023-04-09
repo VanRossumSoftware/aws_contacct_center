@@ -5,3 +5,7 @@ variable "region" {
 variable "instanceId" {
   type = string
 }
+
+variable "environment" {
+  type = string
+}
