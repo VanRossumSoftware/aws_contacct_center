@@ -1,3 +1,6 @@
 region = "us-east-1"
 instanceId = "86e98bec-ba70-4283-b544-2d3d63888543"
 environment = "test"
+phoneNumberConfigDDBName = "systemPhoneNumberConfig"
+promptDDBName = "prompts"
+connectInstanceARN = "arn:aws:connect:us-east-1:130618378039:instance/86e98bec-ba70-4283-b544-2d3d63888543"
