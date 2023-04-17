@@ -1,0 +1,12 @@
+{
+    "ContactFlow": {
+        "Arn": "arn:aws:connect:us-east-1:130618378039:instance/86e98bec-ba70-4283-b544-2d3d63888543/contact-flow/fd18ba73-2dfc-460f-bb12-87399a6ecec8",
+        "Id": "fd18ba73-2dfc-460f-bb12-87399a6ecec8",
+        "Name": "100_GetAccountNumber",
+        "Type": "CONTACT_FLOW",
+        "State": "ACTIVE",
+        "Description": "",
+        "Content": "{\"Version\":\"2019-10-30\",\"StartAction\":\"499022fe-70fd-4160-a800-da21c041c2c1\",\"Metadata\":{\"entryPointPosition\":{\"x\":40,\"y\":40},\"ActionMetadata\":{\"499022fe-70fd-4160-a800-da21c041c2c1\":{\"position\":{\"x\":171.2,\"y\":121.6},\"dynamicParams\":[]},\"651b79ba-6cdd-4b28-b9c7-13d8b588b95e\":{\"position\":{\"x\":397.6,\"y\":116},\"parameters\":{\"LambdaInvocationAttributes\":{\"Language\":{\"useDynamic\":true}}},\"dynamicMetadata\":{\"Language\":true,\"ContactFlowName\":false}},\"9fde8119-9459-4326-9392-b5eb8cd4000d\":{\"position\":{\"x\":1010.4,\"y\":378.4}},\"93e51d13-4556-404b-9254-6052fb8107e0\":{\"position\":{\"x\":651.2,\"y\":53.6},\"parameters\":{\"Text\":{\"useDynamic\":true}},\"useDynamic\":true}}},\"Actions\":[{\"Parameters\":{\"Attributes\":{\"callPath\":\"callPath | 100_GetAccountNumber\"}},\"Identifier\":\"499022fe-70fd-4160-a800-da21c041c2c1\",\"Type\":\"UpdateContactAttributes\",\"Transitions\":{\"NextAction\":\"651b79ba-6cdd-4b28-b9c7-13d8b588b95e\",\"Errors\":[{\"NextAction\":\"651b79ba-6cdd-4b28-b9c7-13d8b588b95e\",\"ErrorType\":\"NoMatchingError\"}]}},{\"Parameters\":{\"LambdaFunctionARN\":\"arn:aws:lambda:us-east-1:130618378039:function:test-getPrompts\",\"InvocationTimeLimitSeconds\":\"3\",\"LambdaInvocationAttributes\":{\"Language\":\"$.Attributes.language\",\"ContactFlowName\":\"100_GetAccountNumber\"},\"ResponseValidation\":{\"ResponseType\":\"STRING_MAP\"}},\"Identifier\":\"651b79ba-6cdd-4b28-b9c7-13d8b588b95e\",\"Type\":\"InvokeLambdaFunction\",\"Transitions\":{\"NextAction\":\"93e51d13-4556-404b-9254-6052fb8107e0\",\"Errors\":[{\"NextAction\":\"9fde8119-9459-4326-9392-b5eb8cd4000d\",\"ErrorType\":\"NoMatchingError\"}]}},{\"Parameters\":{},\"Identifier\":\"9fde8119-9459-4326-9392-b5eb8cd4000d\",\"Type\":\"DisconnectParticipant\",\"Transitions\":{}},{\"Parameters\":{\"Text\":\"$.External.acctNumPrompt\"},\"Identifier\":\"93e51d13-4556-404b-9254-6052fb8107e0\",\"Type\":\"MessageParticipant\",\"Transitions\":{\"NextAction\":\"9fde8119-9459-4326-9392-b5eb8cd4000d\",\"Errors\":[{\"NextAction\":\"9fde8119-9459-4326-9392-b5eb8cd4000d\",\"ErrorType\":\"NoMatchingError\"}]}}]}",
+        "Tags": {}
+    }
+}

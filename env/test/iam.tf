@@ -56,11 +56,21 @@ resource "aws_iam_policy" "lambda_ddb_read_access" {
           "dynamodb:Scan"
         ]
         Resource  = [
-          "arn:aws:dynamodb:*:*:table/${var.environment}-${var.phoneNumberConfigDDBName}",
-          "arn:aws:dynamodb:*:*:table/${var.environment}-${var.promptDDBName}"
+          "arn:aws:dynamodb:${var.region}:${var.accountNumber}:table/${var.environment}-${var.phoneNumberConfigDDBName}",
+          "arn:aws:dynamodb:${var.region}:${var.accountNumber}:table/${var.environment}-${var.promptDDBName}",
+          "arn:aws:dynamodb:${var.region}:${var.accountNumber}:table/${var.environment}-${var.paymentHistoryDDBName}"
+        ]
+      },
+      {
+        Effect    = "Allow"
+        Action    = [
+          "dynamodb:PutItem"
+        ]
+        Resource  = [
+          "arn:aws:dynamodb:${var.region}:${var.accountNumber}:table/${var.environment}-${var.paymentHistoryDDBName}"
         ]
       }
-    ]
+    ]   
   })
 }
 

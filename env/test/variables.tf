@@ -1,3 +1,7 @@
+variable "accountNumber" {
+  type = string
+}
+
 variable "region" {
   type = string
 }
@@ -15,6 +19,10 @@ variable "phoneNumberConfigDDBName" {
 }
 
 variable "promptDDBName" {
+  type = string
+}
+
+variable "paymentHistoryDDBName" {
   type = string
 }
 

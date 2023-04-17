@@ -12,5 +12,4 @@
 #TODO: Update above method to use data object instead of hardcoded json
 
 
-#aws connect describe-contact-flow --instance-id 86e98bec-ba70-4283-b544-2d3d63888543 --region us-east-1 --contact-flow-id a40f3f95-3140-4e08-af98-cec066e88424 --> contactFlow.json
-
+#aws connect describe-contact-flow --instance-id 86e98bec-ba70-4283-b544-2d3d63888543 --region us-east-1 --contact-flow-id a40f3f95-3140-4e08-af98-cec066e88424 --> 000_IncomingCall.json

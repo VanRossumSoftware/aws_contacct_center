@@ -35,3 +35,25 @@ resource "aws_dynamodb_table" "prompts" {
     Environment = var.environment
   }
 }
+
+resource "aws_dynamodb_table" "paymentHistory" {
+  name           = "${var.environment}-${var.paymentHistoryDDBName}"
+  billing_mode   = "PAY_PER_REQUEST"
+  stream_enabled = false
+  hash_key       = "paymentId"
+  range_key      = "accountNumber"
+
+  attribute {
+    name = "paymentId"
+    type = "S"
+  }
+
+  attribute {
+    name = "accountNumber"
+    type = "S"
+  }
+
+  tags = {
+    Environment = var.environment
+  }
+}
